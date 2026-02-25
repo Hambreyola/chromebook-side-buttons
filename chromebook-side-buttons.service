@@ -1,0 +1,15 @@
+[Unit]
+Description=Chromebook Side Volume Buttons
+After=pipewire.service
+
+[Service]
+Type=simple
+User=XXXX
+# Make sure you put your username above!
+
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+ExecStart=/bin/bash /usr/local/bin/chromebook-side-buttons.sh
+Restart=always
+
+[Install]
+WantedBy=default.target
